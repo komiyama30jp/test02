@@ -3,54 +3,50 @@ date: "2023-04-25"
 lastmod: "2023-06-02"
 ---
 
-# 通常のTomcatと組込Tomcatの開発者視点での差異
+## ローカル開発
 
-1. 構造上の違い
-![alt](./files/tom001.png)  
+## Pleiades導入手順
+1. [公式サイト](https://mergedoc.osdn.jp/)からPleiades（Java版）を取得します。  
+※Mavenを使用する場合、Eclipse2022は不具合があるためEclipse2023以降を選択してください。  
+    ![download](./files/tom001.png)  
+2. ダウンロードした、ファイルを実行し任意の場所に解凍してください。  
+    ![解凍](./files/pleiades_001.png)  
+※このドキュメントは「D:\pleiades\2023-03」に解凍し、以降このディレクトリで説明します。  
+3. eclipseを起動します。  
+ D:\pleiades\2023-03\eclipse.exeを実行し、続いてワークスペースを作成します。  
+    ![実行](./files/pleiades_002.png)  
 
-    1. 左がこれまで開発していたWebアプリケーションの構造で、右が組込みSpringBoot+Tomcatの構造です。  
-これまでは、Tomcatなどの上にアプリのWarファイルを配置し動作させていました。これはアプリ本体がAppLibrary  
-（Jarファイル群）を  参照し、ミドルウエアの構造やJavaランタイムに依存するという特性があります。  
-これは、アプリケーションが依存する様々なミドルやライブラリをアプリから切り離して、他のアプリで再利用できる  
-というメリットがある一方、ライブラリが複数の階層でロードされるため複雑になりがちというデメリットもあります。　　
+    ![workspace](./files/pleiades_003.png)  
 
-    1. 一方で右の図は、SpringBoot+組込みTomcatの構造である。これは、Tomcatとアプリを一つのパッケージ  
-（Executable Jar）にまとめ、それをJavaRuntimeで動作させるという方式で、ミドルウェア内のライブラリーの再利用性  
-なくなるものの、変更や移植の難易度が大幅に低くなる特徴があります。
+4. Maven使用時のプロキシを設定します。  
+- &ensp;ウインドウ → 設定 → Maven → ユーザー設定を選択します。  
+    ![maven](./files/pleiades_010.png)  
+- &ensp;ユーザー設定を確認し、デフォルトで上記のような設定になっているのですが、settings.xml  
+は存在していないので新規に作成します。  
+    ![maven_dir](./files/pleiades_011.png)  
 
-1. 組込みTomcatを使用する上での考慮事項
-    1. クラスロードの差異  
- 通常のTomcatでは、システムクラスローダ、Tomcat共通クラスローダ、WebAppクラスローダなどに   
- 分割されており、それにより  ライブラリのロードする順番が決定されており、クラスパスの順番を考慮する必要がありました。  
-  一方、SpringBoot+組込みTomcatでは、アーカイブ自体がNested Jarという形式でクラスパスの順番はBOOT-INF/classpath.idx  
- というファイルで制御されています。このJarファイルは、JavaのJarファイルの形式と互換性があるものの拡張されていること  
- た仕様だということを認識する必要があります。
-
-        ![alt](./files/tom002.png)  
-
-1. Tomcatの設定はアプリで設定する  
-これまでのようにTomcatの設定は、serever.xmlなどには行いません。アプリケーションのロジックや設定ファイル  
-に記載することで、Tomcatの設定を行うことができる点が従来のTomcatとは異なります。  
-最低限の設定はDGCPが提供するライブラリで設定可能ですが、基本的にはアプリチームの管理で行います。  
+- &ensp; settings.xmlの記載内容は下記の通りに記載してください。<br>　※SNET内の端末で作業する場合  
 
 
-1. 1アプリ1組み込みサーバー構成とする
-    1. 複数のアプリをデプロイすることはできないため、ロードバランサからのヘルスチェックや管理ツールなどは  
- アプリの中に組み込みます。  
-    1. 複数のアプリをデプロイしていた従来のTomcatでは、アプリ全体でサイジングを行っていたが、組込みTomcatでは  
- アプリケーション毎に必要なメモリをそれぞれ確保する必要があります。
-
-1. バージョン管理
-    1. Tomcat、Javaのバージョン管理をアプリが行います。  
-    1. その他ライブラリ（DBドライバなど）の管理をアプリが行います。  
-<br>
-これまでの開発では、ＡＰサーバを管理するチームが新しいバージョンの標準化を行い  
-受動的にバージョンアップを行ってきたが、組込みTomcatの場合は、アプリと一体化しているため  
-アプリチーム主体で能動的にバージョンアップを行わなければならない。  
-<br>
-1. アプリのログ以外の考慮  
-    1. 従来型のシステムはAPサーバのログは、APサーバを担当するチームがログの形式を定義し出力していました。  
-しかし、組込みTomcatの場合は、APサーバのログもアプリのログとして出力させるような考慮が必要です。
-
-
-
+```settings.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+  <proxies>
+    <proxy>
+      <id>http_proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>proxy.isid.co.jp</host>
+      <port>8080</port>
+    </proxy>
+    <proxy>
+      <id>https_proxy</id>
+      <active>true</active>
+      <protocol>https</protocol>
+      <host>proxy.isid.co.jp</host>
+      <port>8080</port>
+    </proxy>
+  </proxies>
+</settings>
+```
