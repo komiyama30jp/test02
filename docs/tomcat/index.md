@@ -4,9 +4,9 @@ lastmod: "2023-12-21"
 ---
 
 # 通常のTomcatと組込Tomcatの開発者視点での差異
+![alt](./files/tom001.png)  
 
 1. 構造上の違い
-![alt](./files/tom001.png)  
 
     1. 左がこれまで開発していたWebアプリケーションの構造で、右が組込みSpringBoot+Tomcatの構造です。  
 これまでは、Tomcatなどの上にアプリのWarファイルを配置し動作させていました。これはアプリ本体がAppLibrary  
