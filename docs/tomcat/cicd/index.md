@@ -98,7 +98,7 @@ Blue/Greenデプロイメントかローリングアップデートのどちら�
     ]
 }
 ```  
-2. 作成したロールに、pol-dgcp-write-oidc-all、pol-dgcp-write-oidc-all_2のポリシーをアタッチしてください。
+ 2. 作成したロールに、pol-dgcp-write-oidc-all、pol-dgcp-write-oidc-all_2のポリシーをアタッチしてください。
 <br>
 
 

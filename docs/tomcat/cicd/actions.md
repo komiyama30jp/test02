@@ -19,7 +19,7 @@ lastmod: "2024-08-24"
 
 #### 1. ビルドツールを使用しWar(Jar)ファイル作成  
 
-```build war
+```build
       - name: build with maven
         run: mvn --batch-mode --update-snapshots verify --file ${{env.MODULE}}/pom.xml
 
