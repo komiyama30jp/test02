@@ -37,7 +37,7 @@ lastmod: "2024-08-24"
 
 ### 1-2．デプロイ方式の決定  
 Blue/Greenデプロイメントかローリングアップデートのどちらの方式を採用するか決定してください。  
-デプロイ方式の詳細は[【ECS】コンテナデプロイ方式検討.xlsx ](/files/【ECS】コンテナデプロイ方式検討.xlsx)を参照してください。
+デプロイ方式の詳細は[【ECS】コンテナデプロイ方式検討.xlsx ](https://esq365.sharepoint.com/:x:/s/msteams_30dfd0/Ee8N9W8uFx5PuPZCnjEEAQMB9B2EoO3yN95imlYjEaFy_g?e=tsRFZN)を参照してください。
 <br>
 1. ローリングアップデート(標準デプロイ方式)を選択した場合  
 <br>
@@ -98,7 +98,7 @@ Blue/Greenデプロイメントかローリングアップデートのどちら�
     ]
 }
 ```  
-1. 作成したロールに、pol-dgcp-write-oidc-all、pol-dgcp-write-oidc-all_2のポリシーをアタッチしてください。
+2. 作成したロールに、pol-dgcp-write-oidc-all、pol-dgcp-write-oidc-all_2のポリシーをアタッチしてください。
 <br>
 
 
