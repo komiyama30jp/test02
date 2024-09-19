@@ -110,7 +110,7 @@ Blue/Greenデプロイメントかローリングアップデートのどちら�
   <div style="text-align: center;">
   </div>
   <div style="text-align: center;">
-　　<a href="/cicd/actions">2.GitHubActions→</a>
+　　<a href="./actions">2.GitHubActions→</a>
   </div>
 </div>
 
