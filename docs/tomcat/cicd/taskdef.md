@@ -5,10 +5,10 @@ lastmod: "2024-08-24"
 
 # CICDテンプレート利用ガイド
 ## 目次
-- [1.CICDテンプレート適用の流れ](/fluentbit/#1テンプレート適用の流れ)
-- [2.GitHubActions](/cicd/actions)
-- [3.タスク定義ファイル](/cicd/taskdef)　**←本ページ**
-- [4.アプリケーション仕様ファイル](/cicd/appspec)
+- [1.CICDテンプレート適用の流れ](./index)
+- [2.GitHubActions](./actions)
+- [3.タスク定義ファイル](./taskdef)　**←本ページ**
+- [4.アプリケーション仕様ファイル](./appspec)
 <br>
 
 ---
