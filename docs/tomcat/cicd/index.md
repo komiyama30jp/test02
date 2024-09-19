@@ -70,7 +70,7 @@ Blue/Greenデプロイメントかローリングアップデートのどちら�
 1. タスク定義書置換、ECSデプロイ  
 
 ### 1-3．AWSにロールを作成
-1. IAMロールを作成し、GitHubのリポジトリとの信頼関係を作成します。  
+１. IAMロールを作成し、GitHubのリポジトリとの信頼関係を作成します。  
 
 ロール名
 ```Role
@@ -98,7 +98,7 @@ Blue/Greenデプロイメントかローリングアップデートのどちら�
     ]
 }
 ```  
- 2. 作成したロールに、pol-dgcp-write-oidc-all、pol-dgcp-write-oidc-all_2のポリシーをアタッチしてください。
+ ２. 作成したロールに、pol-dgcp-write-oidc-all、pol-dgcp-write-oidc-all_2のポリシーをアタッチしてください。
 <br>
 
 
