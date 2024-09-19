@@ -137,7 +137,7 @@ lastmod: "2024-08-24"
   <div style="text-align: center;">
   </div>
   <div style="text-align: center;">
-　　<a href="/cicd/taskdef">3.タスク定義ファイル→</a>
+　　<a href="./taskdef">3.タスク定義ファイル→</a>
   </div>
 </div>
 

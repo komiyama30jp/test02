@@ -30,7 +30,7 @@ AWSコンソールよりタスク定義をダウンロードしtaskdef_dev.json�
   <div style="text-align: center;">
   </div>
   <div style="text-align: center;">
-　　<a href="/cicd/appspec">3.アプリケーション仕様ファイル→</a>
+　　<a href="./appspec">3.アプリケーション仕様ファイル→</a>
   </div>
 </div>
 

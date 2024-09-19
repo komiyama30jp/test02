@@ -47,7 +47,7 @@ ContainerNameには、タスク定義のコンテナ名を記述してくださ�
   <div style="text-align: center;">
   </div>
   <div style="text-align: center;">
-　　<a href="/cicd/index">1.CICDテンプレート適用の流れ→</a>
+　　<a href="./index">1.CICDテンプレート適用の流れ→</a>
   </div>
 </div>
 
