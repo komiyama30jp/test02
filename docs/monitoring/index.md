@@ -6,7 +6,6 @@ lastmod: "2024-10-30"
 # ECS Execを使用してECSをモニタリングする方法
 
 1. ECSサービスに対しECS Execを有効にする
-  
 ```cmd1
     aws ecs update-service  --cluster [クラスター名] --service [サービス名] --enable-execute-command   
 ```  
