@@ -28,7 +28,6 @@ lastmod: "2024-10-30"
 ※Proxyサーバーは環境によって変更して下さい。
 
 1. ECS Execを実行する。
-
 ```cmd4
     aws ecs execute-command --cluster [クラスター名] --task [タスクID]  --container [コンテナ名] --interactive --command "/bin/sh" --endpoint-url https://vpce-09abd81ced8c4d2e0-8f3miqxd.ecs.ap-northeast-1.vpce.amazonaws.com
 ```  
