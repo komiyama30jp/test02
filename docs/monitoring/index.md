@@ -20,17 +20,18 @@ lastmod: "2024-10-30"
 ```  
 ※Proxyサーバーは環境によって変更して下さい。
 ## 3. 初回のみ実行
-1. ECSサービスに対しECS Execを有効にする
+- ECSサービスに対しECS Execを有効にする
 ```cmd1
     aws ecs update-service  --cluster [クラスター名] --service [サービス名] --enable-execute-command   
 ```  
 
-1. タスクを強制デプロイして新しいタスクに入れ替える
+- タスクを強制デプロイして新しいタスクに入れ替える
 ```cmd2
     aws ecs update-service  --cluster [クラスター名] --service [サービス名] --force-new-deployment   
 ```  
 ※ECS Exec機能を有効化した後に起動したタスクで、はじめてECS Execが利用できます。  
 ※本番稼働環境では、実行に十分注意してください。
+
 ## 4. ECS Execを実行
 ```cmd4
     aws ecs execute-command --cluster [クラスター名] --task [タスクID]  --container [コンテナ名] --interactive --command "/bin/sh"
