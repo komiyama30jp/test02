@@ -1,14 +1,14 @@
 ---
 date: "2024-08-24"
-lastmod: "2024-08-24"
+lastmod: "2024-10-03"
 ---
 
 # CICDテンプレート利用ガイド
 ## 目次
-- [1.CICDテンプレート適用の流れ](./index)　**←本ページ**
-- [2.GitHubActions](./actions) 
-- [3.タスク定義ファイル](./taskdef)
-- [4.アプリケーション仕様ファイル](./appspec)
+- [1.CICDテンプレート適用の流れ](./index.html)　**←本ページ**
+- [2.GitHubActions](./actions.html) 
+- [3.タスク定義ファイル](./taskdef.html)
+- [4.アプリケーション仕様ファイル](./appspec.html)
 <br>
 
 ---

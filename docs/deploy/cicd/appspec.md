@@ -1,21 +1,21 @@
 ---
 date: "2024-08-24"
-lastmod: "2024-08-24"
+lastmod: "2024-10-03"
 ---
 
 # CICDテンプレート利用ガイド
 ## 目次
-- [1.CICDテンプレート適用の流れ](./index)　
-- [2.GitHubActions](./actions)
-- [3.タスク定義ファイル](./taskdef)
-- [4.アプリケーション仕様ファイル](./appspec)　**←本ページ**
+- [1.CICDテンプレート適用の流れ](./index.html)　
+- [2.GitHubActions](./actions.html)
+- [3.タスク定義ファイル](./taskdef.html)
+- [4.アプリケーション仕様ファイル](./appspec.html)　**←本ページ**
 <br>
 
 ---
 
-## 4.アプリケーション仕様ファイル(appspec.yaml)
+## 4.アプリケーション仕様ファイル(appspec.yml)
 
-### 4-1．appspec.yamlの作成
+### 4-1．appspec.ymlの作成
 
 1. Blue/Greenを選択した場合  
 
@@ -35,7 +35,7 @@ ContainerNameには、タスク定義のコンテナ名を記述してくださ�
 この例では<span style="color: red; ">tomcat</span>です。  
 
 ### 4-2．githubに配置
-作成したappspec.yamlをgithubにPushします(前頁の※5)
+作成したappspec.ymlをgithubにPushします(1-1※5)
 
 
 <br>

@@ -4,8 +4,6 @@ on:
   push:
     branches: 
       - master
-#    paths:
-#      - 'poc2/MANIFEST.MF'
 
 env:
   AWS_REGION:             "ap-northeast-1"
@@ -27,7 +25,7 @@ env:
   CODE_DEP_GRP:           "DgpECS-ecs-cluster-t-komi-01-ecs-service-t-komi-03"
 
 jobs:
-  build:
+  build_deploy:
 
     runs-on: ubuntu-latest
     permissions:
@@ -116,7 +114,7 @@ jobs:
           codedeploy-appspec: ${{env.MODULE}}/${{env.CODE_DEP_APPSPEC}}
           codedeploy-application: ${{env.CODE_DEP_APP}}
           codedeploy-deployment-group: ${{env.CODE_DEP_GRP}}
-          wait-for-service-stability: true
+#          wait-for-service-stability: true
 
 
 

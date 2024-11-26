@@ -3,9 +3,7 @@ name: Java CICD Templete1
 on: 
   push:
     branches: 
-      - main
-#    paths:
-#      - 'poc2/MANIFEST.MF'
+      - master
 
 env:
   AWS_REGION: "ap-northeast-1"
@@ -24,7 +22,7 @@ env:
 
 
 jobs:
-  build:
+  build_deploy:
 
     runs-on: ubuntu-latest
     permissions:

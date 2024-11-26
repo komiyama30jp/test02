@@ -1,14 +1,14 @@
 ---
 date: "2024-08-24"
-lastmod: "2024-08-24"
+lastmod: "2024-10-03"
 ---
 
 # CICDテンプレート利用ガイド
 ## 目次
-- [1.CICDテンプレート適用の流れ](./index)　
-- [2.GitHubActions](./actions) **←本ページ**
-- [3.タスク定義ファイル](./taskdef)
-- [4.アプリケーション仕様ファイル](./appspec)
+- [1.CICDテンプレート適用の流れ](./index.html)　
+- [2.GitHubActions](./actions.html) **←本ページ**
+- [3.タスク定義ファイル](./taskdef.html)
+- [4.アプリケーション仕様ファイル](./appspec.html)
 <br>
 
 ---
@@ -100,7 +100,6 @@ lastmod: "2024-08-24"
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
-          wait-for-service-stability: true
 ```
 　ECS_CLUSTER　　　　ECSのクラスタ名をセットします  
 　ECS_SERVICE　　　　ECSのサービス名をセットします
