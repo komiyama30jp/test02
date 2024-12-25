@@ -48,13 +48,9 @@ Dockerfileが存在するディレクトリに移動し下記コマンドを実�
 
 docker build  -t [アプリ名]:[タグ名] .  
 
-```Docker Build
- 例
+```DockerBuild
+ 例)
 docker build  -t app:latest .
-```  
-
-```cmd4
-    aws ecs execute-command --cluster [クラスター名] --task [タスクID]  --container [コンテナ名] --interactive --command "/bin/sh"
 ```  
 
 ### 1-2．イメージのレポジトリ名、タグ名をAmazon ECRに対応したモノへ変更  
@@ -63,7 +59,7 @@ docker tag [buildしたイメージ名] [<span style="color:red;">ECRレポジ�
 
 
 ```Powershell
- 例
+ 例)
 docker tag app:latest 084563037095.dkr.ecr.ap-northeast-1.amazonaws.com/ecr-pri-t-iappoc-web:work-t-iappoc-tomcat-v1.0.0
 ```
 <br>
