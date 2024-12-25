@@ -35,8 +35,10 @@ aws sts get-caller-identity を実行する。
 
 - 管理コンソールは、**旧管理コンソール** でのSS/操作。
 <br><br>
+
 ## 概念図
 ![概念図](./files/pict001.png)  
+
 <br><br>
 
 ## 1.イメージのPush
@@ -44,10 +46,10 @@ aws sts get-caller-identity を実行する。
 ### 1-1. イメージを作成
 Dockerfileが存在するディレクトリに移動し下記コマンドを実行
 
-```Docker Build
 docker build  -t [アプリ名]:[タグ名] .
 
-例）
+```Docker Build
+# 例
 docker build  -t app:latest .
 ```  
 
